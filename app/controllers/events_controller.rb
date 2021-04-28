@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
     @event = Event.all
-
+    @user = User.find_by(id: session[:userid])
   end
 
   def new
@@ -19,6 +19,19 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by(id: params[:id])
+  end
+
+  def register
+    @event = Event.find_by(id: params[:event_id])
+  end
+
+  def pay 
+    @event = Event.find_by(id: params[:event_id])
+    @user = User.find_by(id: session[:userid])
+  end
+
+  def confirm
+    @user = User.find_by(id: session[:userid])
   end
 
   private

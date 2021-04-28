@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
-
+    has_many :registrations
+    has_many :users, through: :registrations
 
     validates :name, presence: true
     validates :host, presence: true
