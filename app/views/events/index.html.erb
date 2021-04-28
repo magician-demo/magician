@@ -1,0 +1,22 @@
+<div class="header">
+    <div><%= link_to 'Create New Event', new_event_path, {:style=>'color:white; font-weight: bold; text-decoration: none;', :class => "css_class"} %></div>
+    <div><span><%= link_to 'Register', new_user_path, {:style=>'color:white; font-weight: bold; text-decoration: none;', :class => "css_class"} %></span> | <span>Login</span></div>
+</div>
+<div class="body">
+    <div class="announcement">
+        <h1>Welcome to TA MAG</h1>
+    </div>
+    <div><%= flash[:notice] %></div>
+    <div class="eventlist">
+
+        <% @event.each do |event| %>
+        <div class="event">
+            <img src="https://picsum.photos/300/100" alt="">
+            <h4>Event: <%= link_to event.name, event_path(event.id) %></h4>
+            <p>Time: <%= event.time %></p>
+            <p>Location: <%= event.location %></p>
+            <p><%=  event.description %></p>
+        </div>
+        <% end %>
+
+<div class="footer"></div>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  host: MyString
+  location: MyString
+  time: 2021-04-28 16:20:34
+  description: MyText
+  register: 1
+  deleted_at: 2021-04-28 16:20:34
+
+two:
+  name: MyString
+  host: MyString
+  location: MyString
+  time: 2021-04-28 16:20:34
+  description: MyText
+  register: 1
+  deleted_at: 2021-04-28 16:20:34

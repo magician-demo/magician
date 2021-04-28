@@ -1,0 +1,35 @@
+<h1>Wanna Become A Host ? </h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quo dignissimos tenetur ab culpa numquam atque earum cum officiis, expedita odio dolorum error, minus consequuntur vitae inventore repudiandae natus neque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto neque modi sunt mollitia natus recusandae magni nostrum fugiat voluptates accusantium! Quisquam harum nam minima mollitia fuga quibusdam in perferendis eaque.</p>
+
+
+
+<div class="container">
+    <div class="form">
+        <%= form_for(@event) do |form| %>
+        <div>
+            <span class="label"><%= form.label :name %>: </span>
+            <span class="inputbox"><%= form.text_field :name %></span>
+        </div>
+        <div>
+            <span class="label"><%= form.label :host %>: </span>
+            <span class="inputbox"><%= form.text_field :host %></span>
+        </div>
+        <div>
+            <span class="label"><%= form.label :location %>: </span>
+            <span class="inputbox"><%= form.text_field :location %></span>
+        </div>
+        <div>
+            <span class="label"><%= form.label :time %>: </span>
+            <span class="inputbox"><%= form.text_field :time %></span>
+        </div>
+        <div>
+            <span class="label"><%= form.label :description %>: </span>
+            <span class="inputarea"><%= form.text_area :description %></span>
+        </div>
+            <%= form.submit "Let's Go" %>
+        <% end %>
+    </div>
+    <div>
+        <img src="https://picsum.photos/900/400"" alt="">
+    </div>
+</div>

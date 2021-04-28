@@ -1,0 +1,28 @@
+class EventsController < ApplicationController
+  def index
+    @event = Event.all
+
+  end
+
+  def new
+    @event = Event.new 
+  end
+
+  def create
+    @event = Event.new(event_params)
+    if @event.save
+        redirect_to events_path, notice: "Successfully Created A New Event!!!"
+    else
+        render :new
+    end
+  end
+
+  def show
+    @event = Event.find_by(id: params[:id])
+  end
+
+  private
+  def event_params
+    params.require(:event).permit(:name, :host, :location, :time, :description)
+  end
+end
