@@ -1,7 +1,9 @@
 class Event < ApplicationRecord
 
+
     validates :name, presence: true
-    validates :email, presence: true, format: { with: /.+\@.+\..+/ }
-    validates :username, presence: true
-    validates :password, presence: true, confirmation: true
+    validates :host, presence: true
+    validates :location, presence: true
+    validates :time, presence: true
+    validates :description, presence: true
 end

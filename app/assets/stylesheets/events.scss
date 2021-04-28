@@ -25,14 +25,16 @@ img {
 
 .eventlist {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .event {
     width: 300px;
-    height: 100px;
+    height: 200px;
     text-align: center;
     border: 1px double black;
     margin: 10px; 
+    overflow:auto;
 }
 
 

@@ -4,14 +4,13 @@
 </div>
 <div class="body">
     <div class="announcement">
-        <h1>Welcome to TA MAG</h1>
+        <h1>TA MAG</h1>
     </div>
     <div><%= flash[:notice] %></div>
     <div class="eventlist">
 
         <% @event.each do |event| %>
         <div class="event">
-            <img src="https://picsum.photos/300/100" alt="">
             <h4>Event: <%= link_to event.name, event_path(event.id) %></h4>
             <p>Time: <%= event.time %></p>
             <p>Location: <%= event.location %></p>
