@@ -12,7 +12,7 @@
 
 <div class="container">
     <div class="form">
-        <%= form_for(@user, url: sign_in_users_path ) do |form| %>
+        <%= form_for(@user, url: sign_in_users_path, method:'post') do |form| %>
         <div>
             <span class="label"><%= form.label :username %>: </span>
             <span class="inputbox"><%= form.text_field :username %></span>

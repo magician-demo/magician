@@ -22,11 +22,11 @@ class User < ApplicationRecord
     end
 
     def self.login(params)
-        email = params[:email]
+        username = params[:username]
         password = params[:password]
         salted_password = Encryptor.salted(password)
         encrypted_password = Encryptor.encrypt(salted_password)
-        find_by(email: email, password: encrypted_password)
+        find_by(username: username, password: encrypted_password)
     end
 
     private 

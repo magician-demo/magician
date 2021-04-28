@@ -32,6 +32,9 @@ class EventsController < ApplicationController
 
   def confirm
     @user = User.find_by(id: session[:userid])
+    @event = Event.find_by(id: params[:event_id])
+    @user.events = [@event] 
+    redirect_to users_path, notice: "Successfully Registered!!!"
   end
 
   private

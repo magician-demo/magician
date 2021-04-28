@@ -15,7 +15,15 @@
 </div>
 <div class="actpass">
     <div class="registeredevent">
-        <div class="qrcode"></div>
-        <div class="name"></div>
+        <ul>
+            <% @events.each do |event| %>
+            <li>
+                <div class="qrcode"><%= qr_gen(event.name, event.users.name, session[:userid])%></div>
+                <div class="name"><%= event.name %></div>
+            </li>
+            <% end %>
+        </ul>
+
     </div>
+
 </div>

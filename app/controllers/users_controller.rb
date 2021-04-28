@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     def index
         @user = User.find_by(id: session[:userid])
+        @events = @user.events
     end
 
     def new 
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
       user = User.login(user_params)
       if user
         session[:userid] = user.id
-        redirect_to users_path, notice: "Hey #{@user.name}! Been A While! Looking for anything exciting ???" 
+        redirect_to users_path, notice: "Hey #{user.name}! Been A While! Looking for anything exciting ???" 
       else
         redirect_to sign_in_users_path, notice: "Incorrect Username or Password"
       end
