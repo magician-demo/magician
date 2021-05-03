@@ -1,0 +1,29 @@
+<%= flash[:notice] %>
+<br>
+<%= link_to "Back to Homepage", events_path %> 
+<h1><%= @user.name %>'s Activity List</h1>
+<div class="nav">
+    <ul class="category">
+        <li><a href="">Favorite</a></li>
+        <li><a href="">History</a></li>
+        <li><a href="">Incoming</a></li>
+        <li><a href="">You Might Like</a></li>
+    </ul>
+</div>
+<div class="info">
+
+</div>
+<div class="actpass">
+    <div class="registeredevent">
+        <ul>
+            <% @events.each do |event| %>
+            <li>
+                <div class="qrcode"><%= qr_gen(event.name, event.users.name, session[:userid])%></div>
+                <div class="name"><%= event.name %></div>
+            </li>
+            <% end %>
+        </ul>
+
+    </div>
+
+</div>

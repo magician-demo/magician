@@ -1,0 +1,34 @@
+<div class="header">
+    <% if user_signed_in? %>
+    <div>
+        <%= link_to 'Create New Event', new_event_path, {:style=>'color:black; font-weight: bold; text-decoration: none;', :class => "css_class"} %> <span>|</span>
+        <%= link_to 'User Page', users_path, {:style=>'color:black; font-weight: bold; text-decoration: none;', :class => "css_class"} %>
+    </div>
+    <div>
+        <span class="logout" style="color: black;"><%= link_to 'Log-Out', sign_out_users_path, :method => :delete %></span><span class="email">| <%= current_user.email %></span>
+    </div>
+    <% else %>
+    <div>
+        <%= link_to 'Register', new_user_path, {:style=>'color:black; font-weight: bold; text-decoration: none;', :class => "css_class"} %>
+        <%= link_to 'Login', sign_in_users_path, {:style=>'color:black; font-weight: bold; text-decoration: none;', :class => "css_class"} %>
+    </div>
+    <% end %>    
+</div>  
+
+<div class="body">
+    <div class="announcement">
+        <h1>TA MAG</h1>
+    </div>
+    <div class="eventlist">
+        <% @event.each do |event| %>
+        <div class="event">
+            <h4>Event: <%= link_to event.name, event_path(event.id) %></h4>
+            <p>Time: <%= event.time %></p>
+            <p>Location: <%= event.location %></p>
+            <p><%=  event.description %></p>
+        </div>
+        <% end %>
+    </div>
+<div class="footer"></div>
+
+

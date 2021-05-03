@@ -1,0 +1,46 @@
+<%= link_to 'Back To Homepage', events_path %> 
+<h1>Register Page</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore rem quisquam aspernatur libero eaque repellendus dolorum totam, quasi sapiente et obcaecati quibusdam unde ullam consequuntur voluptatem est tempore inventore velit magni, praesentium impedit, deleniti eveniet dolores. Voluptatibus nemo aut dignissimos eius vitae sint molestias? Accusantium ratione libero, dicta facilis ea, consequuntur tempore quos voluptatibus, soluta dolorem inventore ullam vero assumenda quibusdam incidunt. Sint natus deserunt, eos sed ullam aspernatur eum ipsa dolorem nihil, quos iure provident nobis, magni quidem in?</p>
+
+
+<ul>
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<%= flash[:notice] %>
+
+<div class="container">
+    <div class="form">
+        <%= form_for(@user) do |form| %>
+        <div>
+            <span class="label"><%= form.label :name %>: </span>
+            <span class="inputbox"><%= form.text_field :name %></span>
+        </div>
+        <div>
+            <span class="label"><%= form.label :email %>: </span>
+            <span class="inputbox"><%= form.email_field :email %></span>
+        </div>
+        <div>
+            <span class="label"><%= form.label :username %>: </span>
+            <span class="inputbox"><%= form.text_field :username %></span>
+        </div>
+        <div>
+            <span class="label"><%= form.label :password %>: </span>
+            <span class="inputbox"><%= form.password_field :password %></span>
+        </div>
+        <div>
+            <span class="label"><%= form.label :password_confirmation %>: </span>
+            <span class="inputbox"><%= form.password_field :password_confirmation %></span>
+        </div>
+
+            <%= form.submit "Register" %>
+        <% end %>
+    </div>
+    <div>
+        <img src="https://picsum.photos/900/400"" alt="">
+    </div>
+</div>

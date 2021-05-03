@@ -1,0 +1,30 @@
+<%= link_to 'Back To Homepage', events_path %> 
+<h1>Sign-In Page</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore rem quisquam aspernatur libero eaque repellendus dolorum totam, quasi sapiente et obcaecati quibusdam unde ullam consequuntur voluptatem est tempore inventore velit magni, praesentium impedit, deleniti eveniet dolores. Voluptatibus nemo aut dignissimos eius vitae sint molestias? Accusantium ratione libero, dicta facilis ea, consequuntur tempore quos voluptatibus, soluta dolorem inventore ullam vero assumenda quibusdam incidunt. Sint natus deserunt, eos sed ullam aspernatur eum ipsa dolorem nihil, quos iure provident nobis, magni quidem in?</p>
+
+<ul>
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+<% end %>
+</ul>
+
+<div class="container">
+    <div class="form">
+        <%= form_for(@user, url: sign_in_users_path, method:'post') do |form| %>
+        <div>
+            <span class="label"><%= form.label :username %>: </span>
+            <span class="inputbox"><%= form.text_field :username %></span>
+        </div>
+        <div>
+            <span class="label"><%= form.label :password %>: </span>
+            <span class="inputbox"><%= form.password_field :password %></span>
+        </div>
+            <%= form.submit "Log-In" %>
+        <% end %>
+    </div>
+    <div>
+        <img src="https://picsum.photos/900/400"" alt="">
+    </div>
+</div>
