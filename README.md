@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 [Unsolved] - The form in sign_in.html.erb somehow is not applied with the validators in User Model -> can still send out empty entry
@@ -6,3 +7,8 @@
 [ToDo] - Should probably change route of User Page to show.html.erb (instead of using index.html.erb)
 [ToDo] - Moving the css style into Webpacker -> rails server is damn slow.
 [ToDo] - Apply "devise" gem and "paranoia" gem
+=======
+# magician
+# magician
+# 當後端工程師年薪百萬
+>>>>>>> update readme
